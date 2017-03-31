@@ -8,11 +8,17 @@ import ListItem from './ListItem';
 class EmployeeList extends Component {
   componentWillMount() {
     this.props.employeesFetch();
+    console.log('mounting');
 
     this.createDataSource(this.props);
   }
 
+  componentWillUnmount() {
+    console.log('unmounting');
+  }
+
   componentWillReceiveProps(nextProps) {
+    console.log('receive props');
     this.createDataSource(nextProps);
   }
 
